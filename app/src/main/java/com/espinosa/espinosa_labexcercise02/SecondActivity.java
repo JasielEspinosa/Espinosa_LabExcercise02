@@ -3,7 +3,6 @@ package com.espinosa.espinosa_labexcercise02;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -34,7 +33,7 @@ public class SecondActivity extends AppCompatActivity {
         buttonBack = (Button) findViewById(R.id.btn_back);
         buttonClear = (Button) findViewById(R.id.btn_clear);
 
-        preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        preferences = getSharedPreferences("sharedText.txt", MODE_PRIVATE);
     }
 
     public void callMainActivity(View view) {
@@ -43,8 +42,8 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     public void loadSP(View view) {
-        String usernameSP = preferences.getString("usernameSP", "");
-        String passwordSP = preferences.getString("passwordSP", "");
+        String usernameSP = preferences.getString("usernameSP", "NULL");
+        String passwordSP = preferences.getString("passwordSP", "NULL");
         displayText.setText("Username is " + usernameSP + " and Password is " + passwordSP);
     }
 

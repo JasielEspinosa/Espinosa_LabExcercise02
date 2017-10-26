@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         buttonSP = (Button) findViewById(R.id.btn_sharedPreferences);
         buttonIS = (Button) findViewById(R.id.btn_internalStorage);
 
-        preferences = getPreferences(Context.MODE_PRIVATE);
+        preferences = getSharedPreferences("sharedText.txt", MODE_PRIVATE);
 
     }
 
