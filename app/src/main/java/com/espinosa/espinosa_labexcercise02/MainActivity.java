@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         buttonSP = (Button) findViewById(R.id.btn_sharedPreferences);
         buttonIS = (Button) findViewById(R.id.btn_internalStorage);
 
-        preferences = getSharedPreferences("sharedText.txt", MODE_PRIVATE);
+        preferences = getSharedPreferences("sharedText", MODE_PRIVATE);
 
     }
 
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("usernameSP", inputUsername.getText().toString());
         editor.putString("passwordSP", inputPassword.getText().toString());
-        editor.commit();
+        editor.apply();
         Toast.makeText(this, "Successfully saved to Shared Preferences", Toast.LENGTH_LONG).show();
     }
 
@@ -56,10 +56,8 @@ public class MainActivity extends AppCompatActivity {
             fos = openFileOutput("output.txt", Context.MODE_PRIVATE);
             fos.write(usernameIS.getBytes());
             fos.write(passwordIS.getBytes());
-        } catch (FileNotFoundException fnfe) {
-            fnfe.printStackTrace();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         } finally {
             try {
                 fos.close();

@@ -33,7 +33,7 @@ public class SecondActivity extends AppCompatActivity {
         buttonBack = (Button) findViewById(R.id.btn_back);
         buttonClear = (Button) findViewById(R.id.btn_clear);
 
-        preferences = getSharedPreferences("sharedText.txt", MODE_PRIVATE);
+        preferences = getSharedPreferences("sharedText", MODE_PRIVATE);
     }
 
     public void callMainActivity(View view) {
@@ -44,22 +44,20 @@ public class SecondActivity extends AppCompatActivity {
     public void loadSP(View view) {
         String usernameSP = preferences.getString("usernameSP", "NULL");
         String passwordSP = preferences.getString("passwordSP", "NULL");
-        displayText.setText("Username is " + usernameSP + " and Password is " + passwordSP);
+        displayText.setText("Username is " + usernameSP + "\nPassword is " + passwordSP);
     }
 
     public void loadIS(View view) {
-        StringBuffer buffer = new StringBuffer();
-        int read = 0;
+        StringBuilder buffer = new StringBuilder();
+        int read;
         try {
             fis = openFileInput("output.txt");
             while ((read = fis.read()) != -1) {
                 buffer.append((char) read);
             }
             fis.close();
-        } catch (FileNotFoundException fnfe) {
-            fnfe.printStackTrace();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         displayText.setText(buffer.toString());
     }
