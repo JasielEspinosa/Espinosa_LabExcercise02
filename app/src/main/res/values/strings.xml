@@ -1,5 +1,18 @@
 <resources>
     <string name="app_name">Espinosa_LabExcercise02</string>
 
+    <string name="load_shared_pref">LOAD SHARED PREFERENCES</string>
+    <string name="load_internal_storage">LOAD INTERNAL STORAGE</string>
+
+    <string name="back">BACK</string>
+    <string name="clear">CLEAR</string>
+
+    <string name="next">next</string>
+
+    <string name="username_input">Username: </string>
+    <string name="password_input">Password: </string>
+
+    <string name="shared_pref">LOAD SHARED PREFERENCES</string>
+    <string name="internal_storage">LOAD INTERNAL STORAGE</string>
 
 </resources>

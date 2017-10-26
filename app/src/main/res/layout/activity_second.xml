@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,42 +10,41 @@
         android:id="@+id/linear_buttonsLoad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/linear_password"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="86dp"
         android:orientation="vertical"
-        android:weightSum="1"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linear_password"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/btn_loadSharedPref"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
-            android:text="LOAD SHARED PREFERENCES"
-            android:onClick="loadSP"/>
+            android:onClick="loadSP"
+            android:text="@string/load_shared_pref" />
 
         <Button
             android:id="@+id/btn_loadInternalStorage"
             android:layout_width="247dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
             android:layout_marginTop="5dp"
-            android:text="LOAD INTERNAL STORAGE"
-            android:onClick="loadIS"/>
+            android:onClick="loadIS"
+            android:text="@string/load_internal_storage" />
 
     </LinearLayout>
 
     <RelativeLayout
+        android:id="@+id/relativeLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/displayText"
@@ -64,15 +63,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="125dp"
         android:orientation="horizontal"
-        android:weightSum="1"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linear_password"
-        app:layout_constraintVertical_bias="1.0">
-
+        app:layout_constraintLeft_toLeftOf="parent">
 
         <Button
             android:id="@+id/btn_back"
@@ -81,7 +76,7 @@
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:onClick="callMainActivity"
-            android:text="BACK" />
+            android:text="@string/back" />
 
         <Button
             android:id="@+id/btn_clear"
@@ -89,9 +84,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:text="CLEAR"
-            android:onClick="clearDisplay"/>
+            android:onClick="clearDisplay"
+            android:text="@string/clear" />
 
     </LinearLayout>
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

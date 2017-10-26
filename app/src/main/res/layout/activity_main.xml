@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,57 +8,62 @@
     tools:context="com.espinosa.espinosa_labexcercise02.MainActivity">
 
     <LinearLayout
-        android:id="@+id/linear_username"
-        android:layout_width="match_parent"
+        android:id="@+id/linearInputs"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="42dp"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linear_buttons"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/username"
+        <LinearLayout
+            android:id="@+id/linear_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Username: "
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/input_username" />
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/input_username"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/username_input"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/input_username" />
 
+            <EditText
+                android:id="@+id/input_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:labelFor="@+id/input_username" />
 
-    </LinearLayout>
+        </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linear_password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/linear_username"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="29dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/password"
+        <LinearLayout
+            android:id="@+id/linear_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Password: " />
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/input_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPassword" />
+            <TextView
+                android:id="@+id/password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/password_input" />
+
+            <EditText
+                android:id="@+id/input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPassword"
+                android:labelFor="@+id/input_password" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -66,46 +71,43 @@
         android:id="@+id/linear_buttons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_centerHorizontal="true"
         android:orientation="vertical"
         android:weightSum="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linear_password"
-        app:layout_constraintVertical_bias="1.0"
-        android:layout_below="@+id/linear_password"
-        android:layout_centerHorizontal="true">
+        app:layout_constraintTop_toBottomOf="@+id/linearInputs">
 
         <Button
             android:id="@+id/btn_sharedPreferences"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="2.5dp"
             android:layout_marginTop="5dp"
-            android:text="Shared Preferences"
-            android:onClick="triggerSharedPref"/>
+            android:onClick="triggerSharedPref"
+            android:text="@string/shared_pref" />
 
         <Button
             android:id="@+id/btn_internalStorage"
             android:layout_width="247dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
-            android:text="Internal Storage"
-            android:onClick="triggerInternalStorage"/>
+            android:layout_marginBottom="2.5dp"
+            android:layout_marginTop="2.5dp"
+            android:onClick="triggerInternalStorage"
+            android:text="@string/internal_storage" />
 
         <Button
             android:id="@+id/btn_next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
-            android:text="Next"
-            android:onClick="callSecondActivity"/>
+            android:layout_marginTop="7.5dp"
+            android:onClick="callSecondActivity"
+            android:text="@string/next" />
 
 
     </LinearLayout>
 
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>
