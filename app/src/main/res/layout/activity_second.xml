@@ -27,7 +27,8 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="5dp"
-            android:text="LOAD SHARED PREFERENCES" />
+            android:text="LOAD SHARED PREFERENCES"
+            android:onClick="loadSP"/>
 
         <Button
             android:id="@+id/btn_loadInternalStorage"
@@ -35,23 +36,24 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="5dp"
-            android:text="LOAD INTERNAL STORAGE" />
+            android:text="LOAD INTERNAL STORAGE"
+            android:onClick="loadIS"/>
 
     </LinearLayout>
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true">
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/displayText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:text="TextView" />
+            android:text="" />
 
     </RelativeLayout>
 
@@ -87,7 +89,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:text="CLEAR" />
+            android:text="CLEAR"
+            android:onClick="clearDisplay"/>
 
     </LinearLayout>
 
