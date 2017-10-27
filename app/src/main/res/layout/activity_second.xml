@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background01"
     tools:context="com.espinosa.espinosa_labexcercise02.SecondActivity">
 
     <LinearLayout
@@ -22,16 +23,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
+            android:background="@color/colorPrimary"
             android:onClick="loadSP"
-            android:text="@string/load_shared_pref" />
+            android:text="@string/load_shared_pref"
+            android:textColor="@android:color/background_light" />
 
         <Button
             android:id="@+id/btn_loadInternalStorage"
             android:layout_width="247dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
+            android:background="@color/colorPrimary"
             android:onClick="loadIS"
-            android:text="@string/load_internal_storage" />
+            android:text="@string/load_internal_storage"
+            android:textColor="@android:color/background_light" />
 
     </LinearLayout>
 
@@ -52,7 +57,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:text="" />
+            android:text=""
+            android:textColor="@android:color/holo_blue_bright"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
@@ -70,22 +77,31 @@
         app:layout_constraintLeft_toLeftOf="parent">
 
         <Button
+            style="?android:attr/buttonBarButtonStyle"
             android:id="@+id/btn_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
+            android:background="@android:color/holo_orange_light"
+            android:fontFamily="serif-monospace"
             android:onClick="callMainActivity"
-            android:text="@string/back" />
+            android:text="@string/back"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
 
         <Button
+            style="?android:attr/buttonBarButtonStyle"
             android:id="@+id/btn_clear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
+            android:background="@android:color/holo_orange_light"
+            android:fontFamily="serif-monospace"
             android:onClick="clearDisplay"
-            android:text="@string/clear" />
+            android:text="@string/clear"
+            android:textColor="@android:color/black" />
 
     </LinearLayout>
 

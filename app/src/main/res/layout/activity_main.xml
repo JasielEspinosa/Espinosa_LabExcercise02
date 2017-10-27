@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
+    android:background="@drawable/background01"
     tools:context="com.espinosa.espinosa_labexcercise02.MainActivity">
 
     <LinearLayout
@@ -29,6 +30,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/username_input"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/input_username" />
 
@@ -38,7 +41,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:labelFor="@+id/input_username" />
+                android:labelFor="@+id/input_username"
+                android:textColor="@android:color/holo_blue_bright" />
 
         </LinearLayout>
 
@@ -53,7 +57,9 @@
                 android:id="@+id/password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/password_input" />
+                android:text="@string/password_input"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/input_password"
@@ -61,7 +67,8 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPassword"
-                android:labelFor="@+id/input_password" />
+                android:labelFor="@+id/input_password"
+                android:textColor="@android:color/holo_blue_bright" />
 
         </LinearLayout>
 
@@ -85,8 +92,10 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="2.5dp"
             android:layout_marginTop="5dp"
+            android:background="@color/colorPrimary"
             android:onClick="triggerSharedPref"
-            android:text="@string/shared_pref" />
+            android:text="@string/shared_pref"
+            android:textColor="@android:color/background_light" />
 
         <Button
             android:id="@+id/btn_internalStorage"
@@ -94,8 +103,10 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="2.5dp"
             android:layout_marginTop="2.5dp"
+            android:background="@color/colorPrimary"
             android:onClick="triggerInternalStorage"
-            android:text="@string/internal_storage" />
+            android:text="@string/internal_storage"
+            android:textColor="@android:color/background_light" />
 
         <Button
             android:id="@+id/btn_next"
@@ -103,8 +114,12 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="7.5dp"
+            android:background="@android:color/holo_orange_light"
+            android:fontFamily="serif-monospace"
             android:onClick="callSecondActivity"
-            android:text="@string/next" />
+            android:text="@string/next"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
 
 
     </LinearLayout>
